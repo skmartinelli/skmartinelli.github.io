@@ -15,6 +15,13 @@ h1{
     font-size:300%;
 }
 
+back{
+    font-size: 60%;
+}
+
+date{
+    margin-top:-15px;
+}
 
 header{
   display:flex;

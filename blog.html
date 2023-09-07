@@ -20,9 +20,11 @@
 
     </header>
     <mainbody>
-        <p> Started this blog on August 2. Mostly just bragging and nagging </p>
+        <p> i just started this blog on sept 6 when i decided i wanted to get off instagram. mostly a word dump and for funsies</p><br>
+        <counter> days since starting blog: 0</counter>
+
         <ul>
-            <li> <a href="mailto:skmartinelli@outlook.com"> getting back on the horse - 8/2/23 </a></li>
+            <li> <a href="blogposts/obsidianisneat.html"> obsidian is neat - 9/6/23 </a></li>
            
         </ul>
         
@@ -31,4 +33,32 @@
     </mainbody>
     
     </body>
+
+    <script>
+        // Get the reference to the <counter> tag
+        const counterElement = document.querySelector('counter');
+      
+        // Set the target date (September 6, 2023)
+        const targetDate = new Date("2023-09-06T17:00");
+      
+        // Function to update the counter
+        function updateCounter() {
+          // Calculate the difference in days
+          const currentDate = new Date();
+          console.log(currentDate);
+          const timeDifference = targetDate - currentDate;
+          console.log(timeDifference);
+          const daysDifference = Math.floor(-(timeDifference / (1000 * 60 * 60 * 24)));
+          console.log(daysDifference);
+          // Update the content of the <counter> tag
+          counterElement.textContent = `days since starting blog: ${daysDifference}`;
+        }
+      
+        // Initial update
+        updateCounter();
+      
+        // Schedule daily updates
+        setInterval(updateCounter, 24 * 60 * 60 * 1000); // Update every 24 hours
+      </script>
+      
 </html>

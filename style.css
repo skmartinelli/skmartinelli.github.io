@@ -7,6 +7,32 @@
 }
 
 
+/* Define the animation keyframes */
+@keyframes colorChange {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+/* Apply the animation to the h3 element */
+.color-changing-h3 {
+  animation: colorChange 2s linear infinite; /* Change color every 0.5 seconds (2s total duration) */
+}
+
+
+
 h1{
     font-size:300%;
 }

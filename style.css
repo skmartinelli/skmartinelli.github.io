@@ -39,6 +39,7 @@ h1{
 
 ul{
   padding-inline-start: 0px;
+  list-style-type: none;
 }
 
 header{

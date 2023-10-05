@@ -1,3 +1,55 @@
 p{
     font-size:large;
 }
+
+.menuLink{
+    font-size:xx-large;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+date{
+    font-style: italic;   
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Define the animation keyframes */
+@keyframes colorChange {
+    0% {
+      color: red;
+    }
+    25% {
+      color: blue;
+    }
+    50% {
+      color: green;
+    }
+    75% {
+      color: orange;
+    }
+    100% {
+      color: red;
+    }
+  }
+  
+  /* Apply the animation to the h3 element */
+  colorChange{
+    font-size:xx-large;
+    animation: colorChange 2s linear infinite; /* Change color every 0.5 seconds (2s total duration) */
+  }
+
+
+  body{
+    width:80%;
+    margin:0 auto;
+    padding-bottom: 50px;
+  }

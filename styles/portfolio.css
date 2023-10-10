@@ -70,3 +70,12 @@ body, h1, h2, p, a {
     height:75px;
     
 }
+
+
+/* Style the project image */
+.portfolio-item .project-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; /* This ensures the image covers the square without stretching */
+    border: 1px solid #ccc;
+}

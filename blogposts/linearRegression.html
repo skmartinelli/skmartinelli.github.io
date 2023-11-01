@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple linear regression program</title>
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="../styles/style-blog.css">
+    
+</head>
+<body>
+
+    
+    <header>
+        <p><a class="menuLink" href="../"> Home </a></p>
+        <back> <a class="menuLink" href="../blog.html"> back to blogs </a></back>
+        <h1> a simple linear regression program</h1>
+        <date> Nov 1 2023</date>
+
+
+    </header>
+    <mainbody>
+    
+       <p> 
+        Machine learning has alwasy seemed rather magical to me. I took a damn class on it and I don't remember much. I'm relearning it right now. I forgot how simple some of the programs are with scikit learn. <br><br>
+
+        A quick overview on linear regression: Linear regression is a machine learning algorithm that seeks to make predictions along a continous output. For example, it can be used to make predictions of price or age, such as a stock market prediction algorithm. It does this by finding a best fit line, which matches the best slope coefficients to the input data that will match the test output. And then you find the coefficients by minimizing the loss of the mean squared error, or some other loss function. he coefficients (b0, b1, b2, ..., bn) are adjusted iteratively through techniques like gradient descent to minimize this loss function. <br><br>
+        Linear regression depends upon the assumption that there is a linear relationship between the input and the output. It only makes lines.<br><br>
+        Anyway. That sounds crazy. But it's so simple to implement in code! Here is an example of a linear regression algorithm. enjoy
+
+
+    </p>
+
+<pre>≈
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# 1. Generate synthetic data
+np.random.seed(42)
+house_sizes = np.random.rand(100, 1) * 1000  # Sizes between 0 and 1000 sqft
+prices = 50 + 150 * house_sizes + np.random.randn(100, 1) * 5000  # Prices with some added noise
+
+# 2. Split data into training and test sets (80% train, 20% test)
+X_train, X_test, y_train, y_test = train_test_split(house_sizes, prices, test_size=0.2)
+
+# 3. Create and train a linear regression model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# 4. Evaluate the model
+y_pred = model.predict(X_test)
+mse = mean_squared_error(y_test, y_pred)
+
+# 5. Visualization
+plt.figure(figsize=(10, 6))
+plt.scatter(X_train, y_train, color='blue', label="Training data")
+plt.scatter(X_test, y_test, color='red', label="Test data")
+plt.plot(X_test, y_pred, color='green', linewidth=2, label="Regression Line")
+plt.title("House Price Prediction using Linear Regression")
+plt.xlabel("House Size (sqft)")
+plt.ylabel("Price ($)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+mse
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# 1. Generate synthetic data
+np.random.seed(42)
+house_sizes = np.random.rand(100, 1) * 1000  # Sizes between 0 and 1000 sqft
+prices = 50 + 150 * house_sizes + np.random.randn(100, 1) * 5000  # Prices with some added noise
+
+# 2. Split data into training and test sets (80% train, 20% test)
+X_train, X_test, y_train, y_test = train_test_split(house_sizes, prices, test_size=0.2)
+
+# 3. Create and train a linear regression model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# 4. Evaluate the model
+y_pred = model.predict(X_test)
+mse = mean_squared_error(y_test, y_pred)
+
+# 5. Visualization
+plt.figure(figsize=(10, 6))
+plt.scatter(X_train, y_train, color='blue', label="Training data")
+plt.scatter(X_test, y_test, color='red', label="Test data")
+plt.plot(X_test, y_pred, color='green', linewidth=2, label="Regression Line")
+plt.title("House Price Prediction using Linear Regression")
+plt.xlabel("House Size (sqft)")
+plt.ylabel("Price ($)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+mse
+
+</pre>
+
+
+<p>
+    Anyway that's all i got. I think the code is so simple but some of the syntax is obtuse. Just wanted to log this.
+</p>
+        
+<br><hr><br>
+<back> <a class="menuLink" href="../blog.html"> back to blogs </a></back>
+    </mainbody>
+    
+    </body>
+</html>
